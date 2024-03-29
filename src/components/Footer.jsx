@@ -5,7 +5,7 @@ const Footer = () => {
         <footer className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
                 <a className="navbar-brand text-white " href="!#">React mini-shop</a>
-                <a className="navbar-brand text-white " href="!#">Repo-link</a>
+                <a className="navbar-brand text-white " href="https://github.com/mikhailxrp/react-shop">Repo-link</a>
             </div>
         </footer>
     );
