@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+// импорт созданного контекста
 import { ShopContext } from '../context';
 import { API_URL } from '../config'
 import GoodsList from './GoodsList';

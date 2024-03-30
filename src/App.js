@@ -8,7 +8,6 @@ function App() {
   return (
     <>
       <Header />
-      {/* обернув компонент shop в провайдер позволим ему получить все что есть в провайдере */}
       <ContextProvider>
         <Shop />
       </ContextProvider>

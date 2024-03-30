@@ -1,7 +1,6 @@
 import React from 'react';
 import Product from './Product';
 
-// в случае если что-то не так пишем что по умолчанию это фу-я addProduct = Function.prototype 
 const GoodsList = ({ goods }) => {
 
     return (
