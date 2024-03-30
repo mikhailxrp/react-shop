@@ -1,7 +1,9 @@
-import React from 'react';
+// Импортирую context 
+import React, { useContext } from 'react';
+import { ShopContext } from '../context';
 
-// в случае если что-то не так пишем что по умолчанию это фу-я addProduct = Function.prototype 
-const Product = ({ product, addProduct = Function.prototype }) => {
+const Product = ({ product }) => {
+    const { addProductCart } = useContext(ShopContext)
     return (
 
         <div className="card justify-content-between" style={{ width: '18rem' }}>
@@ -18,7 +20,7 @@ const Product = ({ product, addProduct = Function.prototype }) => {
                 <button
                     type="button"
                     className="btn btn-primary"
-                    onClick={() => addProduct({ id: product.mainId, name: product.displayName, price: product.price.finalPrice })}
+                    onClick={() => addProductCart({ id: product.mainId, name: product.displayName, price: product.price.finalPrice })}
                 >
                     Купить
                 </button>

@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ShopContext } from '../context';
 
-const Cart = ({ quantity = 0, handleCartShow = Function.prototype }) => {
+const Cart = () => {
+    const { order, handleCartShow } = useContext(ShopContext)
+    const quantity = order.length
     return (
         <button className=" btn btn-outline-light d-flex align-items-center cart-btn" onClick={handleCartShow}>
             <i className="bi bi-bag-heart"></i>

@@ -14,7 +14,7 @@ const Paginator = ({ countGoodsPage, totalGoods, paginate }) => {
             <ul className="pagination d-flex justify-content-center mt-3 flex-wrap">
                 {totalPage.map(pageNUmber => {
                     return <li className='page-item' key={pageNUmber} >
-                        <a href='!#' className='page-link' onClick={() => paginate(pageNUmber)} >{pageNUmber}</a>
+                        <button className='page-link' onClick={() => paginate(pageNUmber)} >{pageNUmber}</button>
                     </li>
                 })}
             </ul>

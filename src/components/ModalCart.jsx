@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ShopContext } from '../context';
 import ItemCart from './ItemCart';
 
-const ModalCart = (props) => {
+const ModalCart = () => {
     const {
         order = [],
-        handleCartShow = Function.prototype,
-        removeProductCart = Function.prototype,
-        addQyantityItem = Function.prototype,
-        removeQantityItem = Function.prototype
-    } = props
+        handleCartShow = Function.prototype
+    } = useContext(ShopContext)
+
     // ощая стоимость товаров
     const totalPrice = order.reduce((sum, el) => {
         return sum + el.price * el.quantity
@@ -24,9 +23,6 @@ const ModalCart = (props) => {
                     return <ItemCart
                         {...item}
                         key={item.id}
-                        removeProductCart={removeProductCart}
-                        addQyantityItem={addQyantityItem}
-                        removeQantityItem={removeQantityItem}
                     />
                 }) : <li className="list-group-item  cart-item">Корзина пуста</li>
             }

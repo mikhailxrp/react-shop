@@ -1,12 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
+import { ShopContext } from '../context';
 
-const Alert = ({ name = '', closeAlert = Function.prototype }) => {
+const Alert = () => {
+    const { alertName: name = '', closeAlert = Function.prototype } = useContext(ShopContext)
 
     useEffect(() => {
         const timerId = setTimeout(closeAlert, 2000)
 
         // очистка таймера
         return () => { clearTimeout(timerId) }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [name])
 
     return (

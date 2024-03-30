@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ShopContext } from '../context';
 
 const ItemCart = (props) => {
     const {
@@ -6,17 +7,17 @@ const ItemCart = (props) => {
         name,
         price,
         quantity,
-        removeProductCart = Function.prototype,
-        addQyantityItem = Function.prototype,
-        removeQantityItem = Function.prototype
     } = props
+
+    const { removeProductCart, incQuantity, decQuantity } = useContext(ShopContext)
+
     return (
         <li className="list-group-item cart-item">
             {name}
             <div className='quantity-count'>
-                <i className="bi bi-plus-square-dotted quantity-icon" onClick={() => addQyantityItem(id)}></i>
+                <i className="bi bi-plus-square-dotted quantity-icon" onClick={() => incQuantity(id)}></i>
                 x{quantity}
-                <i className="bi bi-dash-square-dotted quantity-icon" onClick={() => removeQantityItem(id)} ></i>
+                <i className="bi bi-dash-square-dotted quantity-icon" onClick={() => decQuantity(id)} ></i>
                 = <span> {price * quantity}</span>руб.
             </div>
             <button
